@@ -102,7 +102,7 @@
 <div style="display: flex; align-items: center; gap: 20px;">
   <img src="https://i.imgur.com/L55qh7b.png" alt="Logo" style="width: 60px; height: auto;">
   <img src="https://i.imgur.com/WzaQvTL.png" alt="Logo" style="width: 45px; height: auto;">
-  <h1 style="font-size: 32px; margin: 0;">Checklist de Rotina - Auxiliar Financeiro - Acerto</h1>
+  <h1 style="font-size: 32px; margin: 0;">Checklist de Rotina - Assistente Financeiro - Acerto</h1>
 </div>
 <h5>FIN-CKL-003-TCV Rev:02</h5>
 <!-- Formulário de informações iniciais -->
@@ -153,13 +153,15 @@
     <tbody>
       <script>
         const atividades = [
-          ["Após receber borderô da Logística","Comparar o valor total de baixas do acerto com a Planilha de Relatório de Cargas","-","SICF/Excel/Bordero","Acionar Coordenador ADM"],
-          ["09h00 - 09h30","Repasse dos valores recebidos em  dinheiro e acertos ja baixados ao financeiro","-","SICF/Planilha","Acionar Coordenador ADM"],
-          ["09h30 - 10h00","Baixa dos valores via  pix x levantamento feio pelo car","-","SICF/Planilha","Acionar Coordenador ADM"],
-          ["09h00 - 12h00","Atualizar Planilha de Devolução com o relatório (txt) extraído","-","SICF/Excel","Acionar Coordenador ADM"],
-          ["13h30 - 15h00","Atualização dos status das notas fiscais x anotado bordero","-","SICF/Excel","Acionar Coordenador ADM"],
-          ["Após a inserção das NFs de entrada no SICF","Filtrar por tipo de NF (Carregada, Entregue, Devolvida e Reentregue)","-","SICF/Excel","Acionar Coordenador ADM"],
-          ["15h00 - 17h50","Organizaçao e arquivo de canhotos e borderos","-","Canhoto","Acionar Coordenador ADM"],
+          ["08h00 - 08h30","Receber os acertos e borderos emitidos das cargas","-","Bordero","Acionar Coordenador ADM"],
+          ["08h30 - 09h00","Separar os borderos conforme as empresas (ABA e TCV)","-","Bordero","Acionar Coordenador ADM"],
+          ["09h00 - 10h00","Realizar as conferencias dos acertos de ABA e TCV","-","SICF/Banco","Acionar Coordenador ADM"],
+          ["10h00 - 12h00","Alterar as notas na logisticas (Se tiver o RT/DT) e cobrar os mesmos caso não esteja anotados","-","SICF/Teams","Acionar Coordenador ADM"],
+          ["13h00 - 16h00","Realizar os acertos","-","SICF/Banco","Acionar Coordenador ADM"],
+          ["16h00 - 16h30","Realizar a conferencia das baixas de pix, devoluções e reentregas de cada bordero baixado","-","SICF/Banco","Acionar Coordenador ADM"],
+          ["16h30 - 17h00","Resolver demandas de NF paradas (Devolução, Reentregas não feitas)","-","SICF","Acionar Coordenador ADM"],
+          ["17h00 - 17h50","Arquivamento dos borderos do dia","-","Bordero","Acionar Coordenador ADM"],
+          ["17h50 - 18h00","Organizaçao e arquivo de canhotos e borderos (Arquivo Morto)","-","Canhoto","Acionar Coordenador ADM"],
           ];
 
         for (let i = 0; i < atividades.length; i++) {
@@ -249,7 +251,7 @@
     formData.append("data", data);
     formData.append("unidade", unidade);
 
-    fetch("https://script.google.com/macros/s/AKfycbwK1oWwMg5NHgOGcFTdOYhK-nXYjghXCvgSlr3OO0POEPzSmc7arBdW7im0VVu9Vng/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwEZAE7OtVMGd0-yQjYeA6emfhgN3PzCmJNiJNjRC7iebRPWlEPAWOwhc1F4IAgcTAT0g/exec", {
       method: "POST",
       body: formData
     })
